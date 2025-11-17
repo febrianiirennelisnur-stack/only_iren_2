@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Selamat Datang di Kota Tegal</title>
+  <meta name="description" content="Portal sederhana: Selamat Datang di Kota Tegal. Informasi, wisata, budaya, dan kontak." />
+  <style>
+    :root{
+      --accent:#0b6e4f;
+      --muted:#666;
+      --bg:#f6f7fb;
+      --card:#fff;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg, #eaf7f1 0%, var(--bg) 100%);color:#111}
+    .container{max-width:1100px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;gap:18px}
+    .logo{width:78px;height:78px;border-radius:12px;background:var(--card);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);box-shadow:0 6px 18px rgba(11,110,79,.08)}
+    h1{margin:0;font-size:1.8rem}
+    p.lead{margin:6px 0 18px;color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(16,24,40,.06)}
+    nav{display:flex;gap:10px;flex-wrap:wrap}
+    a.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;color:var(--accent);border:1px solid rgba(11,110,79,.12);font-weight:600}
+    .stats{display:flex;gap:12px;margin-top:10px}
+    .stat{flex:1;padding:12px;background:linear-gradient(180deg,#fff,#fbfffe);border-radius:10px;text-align:center}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+    .grid img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+    .section{margin-top:18px}
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:.95rem}
+    @media (max-width:880px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.logo{width:64px;height:64px}}
+    @media (max-width:520px){.grid{grid-template-columns:1fr}}
+    /* small interactive styles */
+    .toggle{display:flex;align-items:center;gap:8px}
+    .chip{display:inline-block;padding:6px 9px;border-radius:999px;background:rgba(11,110,79,.08);font-weight:600}
+    .gallery-row{display:flex;gap:8px}
+    .visit-button{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="logo">TG</div>
+      <div>
+        <h1>Selamat Datang di <span style="color:var(--accent)">Kota Tegal</span></h1>
+        <p class="lead">Situs sederhana untuk memperkenalkan kebudayaan, wisata, dan informasi penting Kota Tegal.</p>
+        <nav>
+          <a class="btn" href="#about">Tentang</a>
+          <a class="btn" href="#wisata">Wisata</a>
+          <a class="btn" href="#kegiatan">Kegiatan</a>
+          <a class="btn" href="#kontak">Kontak</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h2>Ayo Jelajahi Tegal</h2>
+        <p>Temukan kuliner khas, tempat bersejarah, dan kegiatan menarik yang menjadikan Tegal unik. Cocok untuk wisata singkat, liburan keluarga, atau penelitian budaya.</p>
+
+        <div class="stats">
+          <div class="stat">
+            <div style="font-size:20px;font-weight:700">30+</div>
+            <div style="font-size:13px;color:var(--muted)">Tempat Wisata</div>
+          </div>
+          <div class="stat">
+            <div style="font-size:20px;font-weight:700">450K</div>
+            <div style="font-size:13px;color:var(--muted)">Populasi (perkiraan)</div>
+          </div>
+          <div class="stat">
+            <div style="font-size:20px;font-weight:700">100%</div>
+            <div style="font-size:13px;color:var(--muted)">Keramah-tamahan</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Highlight</h3>
+          <ul>
+            <li>Kuliner: Sate Buntel, Moci, Tegal Pindang</li>
+            <li>Cagar Budaya: Benteng, Alun-alun, Masjid tua</li>
+            <li>Kegiatan: Festival, pasar tradisional, pameran seni</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <button id="visit" class="visit-button">Tandai saya pernah ke Tegal</button>
+          <div id="visitMessage" style="margin-top:10px;color:var(--muted)"></div>
+        </div>
+
+      </div>
+
+      <aside class="card">
+        <h3>Galeri Singkat</h3>
+        <div class="grid">
+          <img src="https://source.unsplash.com/collection/190727/800x600" alt="Foto 1" />
+          <img src="https://source.unsplash.com/collection/190728/800x600" alt="Foto 2" />
+          <img src="https://source.unsplash.com/collection/190729/800x600" alt="Foto 3" />
+        </div>
+
+        <div style="margin-top:12px">
+          <a class="btn" href="#wisata">Lihat semua wisata</a>
+          <span class="chip" style="margin-left:8px">Gratis</span>
+        </div>
+
+        <div style="margin-top:16px">
+          <h4>Cuaca Singkat</h4>
+          <p id="weather" style="margin:6px 0;color:var(--muted)">Periksa kondisi cuaca saat berencana berkunjung.</p>
+          <small style="color:var(--muted)">*Data cuaca tidak aktif (placeholder)</small>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="section card">
+      <h2>Tentang Kota Tegal</h2>
+      <p>Kota Tegal adalah kota pesisir di Jawa Tengah yang dikenal karena budaya kulinernya, keramahan warganya, dan sejarah pelabuhan. Kota ini mempunyai kombinasi tradisi dan perkembangan modern yang membuatnya menarik untuk dikunjungi.</p>
+      <p><strong>Lokasi:</strong> Jawa Tengah — pesisir utara Pulau Jawa.</p>
+    </section>
+
+    <section id="wisata" class="section">
+      <h2 class="card" style="padding:14px;border-radius:12px">Tempat Wisata Populer</h2>
+      <div class="grid" style="margin-top:10px">
+        <div class="card" style="padding:12px">
+          <h4>Alun-alun Tegal</h4>
+          <p style="color:var(--muted);font-size:14px">Pusat kegiatan kota, sering ada pasar malam dan pertunjukan seni.</p>
+        </div>
+        <div class="card" style="padding:12px">
+          <h4>Pantai Alam Indah (contoh)</h4>
+          <p style="color:var(--muted);font-size:14px">Area pesisir dengan pemandangan matahari terbenam.</p>
+        </div>
+        <div class="card" style="padding:12px">
+          <h4>Jejak Sejarah</h4>
+          <p style="color:var(--muted);font-size:14px">Bangunan tua dan cagar budaya untuk penikmat sejarah.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kegiatan" class="section card">
+      <h2>Kegiatan & Kalender</h2>
+      <ul>
+        <li>Festival Moci (setiap tahun — tanggal dapat berubah)</li>
+        <li>Pameran Kuliner Bulanan</li>
+        <li>Pasar Seni Mingguan</li>
+      </ul>
+    </section>
+
+    <section id="kontak" class="section card">
+      <h2>Kontak & Informasi</h2>
+      <p>Ingin tahu lebih? Hubungi dinas pariwisata setempat atau kunjungi kantor informasi wisata.</p>
+      <form id="contactForm" onsubmit="return handleForm(event)">
+        <label for="name">Nama</label><br>
+        <input id="name" required placeholder="Nama Anda" style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid #e6e6e9" />
+        <br><br>
+        <label for="msg">Pesan</label><br>
+        <textarea id="msg" required placeholder="Tulis pesan singkat" style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid #e6e6e9"></textarea>
+        <br><br>
+        <button class="visit-button" type="submit">Kirim</button>
+        <div id="formResult" style="margin-top:8px;color:var(--muted)"></div>
+      </form>
+    </section>
+
+    <footer>
+      &copy; <span id="year"></span> Kota Tegal — Dibuat dengan ♥ oleh tim lokal.
+    </footer>
+  </main>
+
+  <script>
+    // small interactivity: visit marker saved in localStorage
+    const visitBtn = document.getElementById('visit');
+    const visitMsg = document.getElementById('visitMessage');
+    const year = document.getElementById('year');
+    year.textContent = new Date().getFullYear();
+
+    function updateVisitUI(){
+      const visited = localStorage.getItem('tegal_visited');
+      if(visited){ visitMsg.textContent = 'Terima kasih! Anda pernah menandai kunjungan pada: ' + visited; visitBtn.textContent='Saya belum ke Tegal lagi'; }
+      else{ visitMsg.textContent = 'Belum ada tanda kunjungan.'; visitBtn.textContent='Tandai saya pernah ke Tegal'; }
+    }
+    updateVisitUI();
+    visitBtn.addEventListener('click', ()=>{
+      const visited = localStorage.getItem('tegal_visited');
+      if(visited){ localStorage.removeItem('tegal_visited'); } else { localStorage.setItem('tegal_visited', new Date().toLocaleString()); }
+      updateVisitUI();
+    });
+
+    // simple contact form handler
+    function handleForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const msg = document.getElementById('msg').value.trim();
+      if(!name || !msg) return false;
+      // store message locally as demo (in real site, send to server)
+      const messages = JSON.parse(localStorage.getItem('tegal_messages') || '[]');
+      messages.unshift({name, msg, at: new Date().toLocaleString()});
+      localStorage.setItem('tegal_messages', JSON.stringify(messages));
+      document.getElementById('formResult').textContent = 'Terima kasih, pesan Anda telah disimpan (demo).';
+      e.target.reset();
+      return false;
+    }
+
+    // weather placeholder (no external fetch in this demo)
+    document.getElementById('weather').textContent = '— Celcius: 27°, Berawan (placeholder)';
+
+  </script>
+</body>
+</html>
