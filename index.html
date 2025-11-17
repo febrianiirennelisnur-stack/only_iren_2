@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AbsenKu - SDN Mintaragen 02</title>
+    <title>Java Island Explorer</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -15,74 +15,107 @@
     <custom-navbar></custom-navbar>
     
     <main class="container mx-auto px-4 py-8">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-10">
-                <h1 class="text-4xl font-bold text-indigo-700 mb-2">Sistem Absensi Digital</h1>
-                <h2 class="text-2xl text-gray-600">SDN Mintaragen 02</h2>
+        <!-- Hero Section -->
+        <section class="hero bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl p-8 text-white mb-12">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Discover the Wonders of Java Island</h1>
+                <p class="text-xl mb-8">Explore the rich culture, breathtaking landscapes, and vibrant cities of Indonesia's most populous island.</p>
+                <a href="#explore" class="bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 inline-block">Start Exploring</a>
             </div>
+        </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Student Attendance -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 hover:shadow-lg transition-shadow">
-                    <div class="flex items-center mb-4">
-                        <div class="p-3 rounded-full bg-indigo-100 mr-4">
-                            <i data-feather="user" class="text-indigo-600"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800">Absensi Siswa</h3>
+        <!-- Features Section -->
+        <section id="explore" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12">What Makes Java Special</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-green-500 mb-4">
+                        <i data-feather="map" class="w-12 h-12"></i>
                     </div>
-                    <p class="text-gray-600 mb-6">Masukkan NIS dan nama untuk melakukan absensi harian.</p>
-                    <a href="student.html" class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
-                        Mulai Absen
-                        <i data-feather="arrow-right" class="ml-2"></i>
-                    </a>
+                    <h3 class="text-xl font-semibold mb-3">Diverse Landscapes</h3>
+                    <p class="text-gray-600">From volcanic mountains to pristine beaches, Java offers stunning natural beauty.</p>
                 </div>
-
-                <!-- Teacher Attendance -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 hover:shadow-lg transition-shadow">
-                    <div class="flex items-center mb-4">
-                        <div class="p-3 rounded-full bg-green-100 mr-4">
-                            <i data-feather="users" class="text-green-600"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800">Absensi Guru</h3>
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-green-500 mb-4">
+                        <i data-feather="home" class="w-12 h-12"></i>
                     </div>
-                    <p class="text-gray-600 mb-6">Masukkan NIP dan nama untuk melakukan absensi harian.</p>
-                    <a href="teacher.html" class="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
-                        Mulai Absen
-                        <i data-feather="arrow-right" class="ml-2"></i>
-                    </a>
+                    <h3 class="text-xl font-semibold mb-3">Rich Culture</h3>
+                    <p class="text-gray-600">Experience ancient temples, traditional arts, and unique Javanese customs.</p>
                 </div>
-
-                <!-- Admin Panel -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 hover:shadow-lg transition-shadow">
-                    <div class="flex items-center mb-4">
-                        <div class="p-3 rounded-full bg-purple-100 mr-4">
-                            <i data-feather="lock" class="text-purple-600"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800">Panel Admin</h3>
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-green-500 mb-4">
+                        <i data-feather="coffee" class="w-12 h-12"></i>
                     </div>
-                    <p class="text-gray-600 mb-6">Akses laporan dan kelola data absensi.</p>
-                    <a href="admin.html" class="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
-                        Login Admin
-                        <i data-feather="arrow-right" class="ml-2"></i>
-                    </a>
-                </div>
-
-                <!-- Attendance Report -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 hover:shadow-lg transition-shadow">
-                    <div class="flex items-center mb-4">
-                        <div class="p-3 rounded-full bg-blue-100 mr-4">
-                            <i data-feather="file-text" class="text-blue-600"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800">Laporan Absensi</h3>
-                    </div>
-                    <p class="text-gray-600 mb-6">Lihat rekapitulasi absensi harian/mingguan.</p>
-                    <a href="report.html" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                        Lihat Laporan
-                        <i data-feather="arrow-right" class="ml-2"></i>
-                    </a>
+                    <h3 class="text-xl font-semibold mb-3">Culinary Delights</h3>
+                    <p class="text-gray-600">Savor world-famous Javanese cuisine from street food to royal recipes.</p>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Destinations Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12">Must-Visit Destinations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="destination-card relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <img src="http://static.photos/nature/640x360/1" alt="Borobudur" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Borobudur Temple</h3>
+                        <p class="text-gray-200">The world's largest Buddhist temple in Central Java</p>
+                    </div>
+                </div>
+                <div class="destination-card relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <img src="http://static.photos/nature/640x360/2" alt="Bromo" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Mount Bromo</h3>
+                        <p class="text-gray-200">Majestic active volcano in East Java</p>
+                    </div>
+                </div>
+                <div class="destination-card relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <img src="http://static.photos/cityscape/640x360/3" alt="Jakarta" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Jakarta</h3>
+                        <p class="text-gray-200">Indonesia's vibrant capital city</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Culture Section -->
+        <section class="bg-green-50 rounded-2xl p-8 mb-16">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8">Javanese Culture</h2>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2">
+                        <img src="http://static.photos/people/640x360/4" alt="Javanese Culture" class="rounded-lg shadow-md w-full">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-semibold mb-4">A Blend of Traditions</h3>
+                        <p class="text-gray-700 mb-4">Java is home to diverse ethnic groups with unique traditions, arts, and languages. The island is known for its:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Wayang shadow puppetry</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Gamelan music ensembles</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Batik textile art</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Traditional Javanese dance</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <custom-footer></custom-footer>
