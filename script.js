@@ -1,21 +1,15 @@
-// Main JavaScript for Java Island Explorer
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+// Simple JS untuk efek tombol dan fake submit
+function fakeSubmit(){
+  alert('Terima kasih! Pesan Anda berhasil dikirim (demo).');
+  return false; // mencegah reload (demo)
+}
 
-    // Animation for feature cards
-    const featureCards = document.querySelectorAll('.feature-card');
-    featureCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
+// Smooth reveal on scroll (simple)
+document.addEventListener('DOMContentLoaded', ()=>{
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add('reveal');
     });
-
-    // Initialize any other JavaScript functionality here
-    console.log('Java Island Explorer is ready!');
+  },{threshold:0.12});
+  document.querySelectorAll('.card, .project-card, .features .card').forEach(el=>obs.observe(el));
 });
